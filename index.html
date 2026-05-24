@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>8.99 Blingee Pixel Life</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="game-panel" aria-label="Blingee Pixel 可玩场景">
+        <div class="topbar">
+          <div>
+            <p class="eyebrow">8.99 Blingee Pixel Life</p>
+            <h1>我们真的离理想生活更近了吗</h1>
+          </div>
+          <div class="score-card" aria-live="polite">
+            <span>生活碎片</span>
+            <strong id="stickerCount">0/0</strong>
+          </div>
+        </div>
+
+        <div class="stage-wrap">
+          <canvas id="gameCanvas" width="960" height="620" aria-label="可移动互动像素场景"></canvas>
+          <div class="scene-toast" id="sceneToast">靠近发光物件按 E 互动，靠近玩家可以聊天</div>
+        </div>
+
+        <div class="mobile-pad" aria-label="移动控制">
+          <button data-move="up" aria-label="向上">▲</button>
+          <div>
+            <button data-move="left" aria-label="向左">◀</button>
+            <button data-action="interact" aria-label="互动">✦</button>
+            <button data-move="right" aria-label="向右">▶</button>
+          </div>
+          <button data-move="down" aria-label="向下">▼</button>
+        </div>
+      </section>
+
+      <aside class="control-panel" aria-label="游戏设置">
+        <section class="multiplayer">
+          <h2>多人房间</h2>
+          <div class="join-row">
+            <input id="playerName" maxlength="8" placeholder="你的昵称" />
+            <button id="joinButton" type="button">加入</button>
+          </div>
+          <div class="online-strip">
+            <span id="onlineCount">1 人在线</span>
+            <span id="connectionState">本地模式</span>
+          </div>
+        </section>
+
+        <section class="chat-panel">
+          <h2>交流</h2>
+          <div class="chat-row">
+            <input id="chatInput" maxlength="32" placeholder="对附近的人说点什么" />
+            <button id="sendButton" type="button">发送</button>
+          </div>
+        </section>
+
+        <section class="closet-panel">
+          <h2>换装</h2>
+          <div class="closet-group">
+            <span>发型</span>
+            <div id="hairButtons" class="closet-buttons"></div>
+          </div>
+          <div class="closet-group">
+            <span>上衣</span>
+            <div id="topButtons" class="closet-buttons"></div>
+          </div>
+          <div class="closet-group">
+            <span>下装</span>
+            <div id="bottomButtons" class="closet-buttons"></div>
+          </div>
+          <div class="closet-group">
+            <span>配件</span>
+            <div id="accessoryButtons" class="closet-buttons"></div>
+          </div>
+        </section>
+
+        <section class="scene-picker">
+          <h2>选择场景</h2>
+          <div id="sceneButtons" class="scene-buttons"></div>
+        </section>
+
+        <section class="memory-log">
+          <h2>回忆碎片</h2>
+          <div id="memoryText" class="memory-text">
+            选择一个场景，走进那些曾经只能被截图、转发、收藏的理想生活。
+          </div>
+        </section>
+
+        <section class="guide">
+          <h2>操作</h2>
+          <p>WASD / 方向键移动，E 或空格互动。启动多人服务器后，其他设备打开同一个地址就能一起进入、换装、聊天。</p>
+        </section>
+      </aside>
+    </main>
+
+    <script src="game.js"></script>
+  </body>
+</html>

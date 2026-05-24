@@ -1,0 +1,12 @@
+{
+  "name": "blingee-pixel-life",
+  "version": "0.1.0",
+  "description": "A multiplayer Blingee pixel life web room.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
