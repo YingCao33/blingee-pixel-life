@@ -385,7 +385,8 @@ function connectMultiplayer() {
     return;
   }
 
-  const wsURL = `${location.protocol === "https:" ? "wss" : "ws"}://${location.host}`;
+  const configuredURL = window.BLINGEE_PIXEL_CONFIG?.wsUrl?.trim();
+  const wsURL = configuredURL || `${location.protocol === "https:" ? "wss" : "ws"}://${location.host}`;
   socket = new WebSocket(wsURL);
   socket.addEventListener("open", () => {
     connected = true;

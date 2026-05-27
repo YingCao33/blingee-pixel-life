@@ -64,7 +64,7 @@ https://xxxxx.lhr.life
 
 ## 正式部署
 
-这是一个无数据库的 Node.js 项目。部署平台需要支持：
+这是一个无数据库的 Node.js 项目。实时多人依赖 WebSocket，所以后端部署平台需要支持：
 
 - Node.js 18+
 - HTTP
@@ -78,6 +78,20 @@ npm start
 ```
 
 部署成功后，平台会给出一个稳定公网地址，所有人都可以通过这个地址进入同一个多人世界。
+
+## Vercel 部署说明
+
+Vercel 适合部署这个项目的前端页面，但不适合直接托管当前的 WebSocket 多人服务器。多人后端建议部署到 Render、Fly.io、Railway 或其他支持长连接 WebSocket 的平台。
+
+如果你把前端部署到 Vercel、后端部署到其他平台，请在 [config.js](config.js) 里填写后端 WebSocket 地址：
+
+```js
+window.BLINGEE_PIXEL_CONFIG = {
+  wsUrl: "wss://你的后端地址"
+};
+```
+
+本地试玩或前后端部署在同一个地址时，保持 `wsUrl` 为空即可。
 
 ## 授权说明
 
