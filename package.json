@@ -4,6 +4,7 @@
   "description": "A multiplayer Blingee pixel life web room.",
   "main": "server.js",
   "scripts": {
+    "build": "node build-vercel.js",
     "start": "node server.js"
   },
   "engines": {
