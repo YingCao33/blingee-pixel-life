@@ -93,6 +93,31 @@ window.BLINGEE_PIXEL_CONFIG = {
 
 本地试玩或前后端部署在同一个地址时，保持 `wsUrl` 为空即可。
 
+## Render 多人后端部署
+
+Render 支持 WebSocket，所以可以直接部署完整项目。这样网页和多人后端在同一个地址，`config.js` 里的 `wsUrl` 保持为空即可。
+
+部署步骤：
+
+1. 打开 `https://render.com`
+2. 用 GitHub 登录
+3. 选择 `New` -> `Web Service`
+4. 选择仓库 `YingCao33/blingee-pixel-life`
+5. 设置：
+   - Runtime: `Node`
+   - Build Command: `npm install`
+   - Start Command: `npm start`
+   - Plan: `Free`
+6. 点击 `Deploy Web Service`
+
+部署完成后，Render 会给你一个类似下面的地址：
+
+```text
+https://blingee-pixel-life.onrender.com
+```
+
+朋友直接打开这个地址，就会进入同一个长期在线多人房间。免费服务可能会在一段时间没人访问后休眠，第一次打开会慢一点。
+
 ## 授权说明
 
 代码以 [MIT](LICENSE-CODE.md) 授权开源。
