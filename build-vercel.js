@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 
 const root = __dirname;
-const output = path.join(root, "dist");
+const output = path.join(root, "public");
 const files = [
   "index.html",
   "styles.css",
